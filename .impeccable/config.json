@@ -1,0 +1,89 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "oversized-h1",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/idx-a-catalogo.html"
+        ],
+        "createdAt": "2026-10-25T09:39:05.110Z",
+        "reason": "Claude: superseded decision-round sketch, not shipping code; replaced by logo-based variants"
+      },
+      {
+        "rule": "oversized-h1",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/idx-b-portada.html"
+        ],
+        "createdAt": "2026-10-25T09:39:05.501Z",
+        "reason": "Claude: superseded decision-round sketch, not shipping code; replaced by logo-based variants"
+      },
+      {
+        "rule": "oversized-h1",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/idx-c-lomos.html"
+        ],
+        "createdAt": "2026-10-25T09:39:05.869Z",
+        "reason": "Claude: superseded decision-round sketch, not shipping code; replaced by logo-based variants"
+      },
+      {
+        "rule": "repeating-stripes-gradient",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-25T10:07:53.377Z",
+        "reason": "Claude: CRT scanlines are the logo's TV-screen material named in the direction contract OWN-WORLD (.crt::after)"
+      },
+      {
+        "rule": "repeating-stripes-gradient",
+        "value": "*",
+        "files": [
+          "legal/legal-notice.html"
+        ],
+        "createdAt": "2026-10-25T10:07:53.833Z",
+        "reason": "Claude: CRT scanlines are the logo's TV-screen material named in the direction contract OWN-WORLD (.crt::after)"
+      },
+      {
+        "rule": "repeating-stripes-gradient",
+        "value": "*",
+        "files": [
+          "legal/privacy.html"
+        ],
+        "createdAt": "2026-10-25T10:07:54.548Z",
+        "reason": "Claude: CRT scanlines are the logo's TV-screen material named in the direction contract OWN-WORLD (.crt::after)"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/idx-a-catalogo.html"
+        ],
+        "createdAt": "2026-10-25T10:13:09.525Z",
+        "reason": "Claude: superseded decision-round sketch with its own exploratory fonts; not shipping code"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/idx-b-portada.html"
+        ],
+        "createdAt": "2026-10-25T10:13:09.873Z",
+        "reason": "Claude: superseded decision-round sketch with its own exploratory fonts; not shipping code"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/idx-c-lomos.html"
+        ],
+        "createdAt": "2026-10-25T10:13:10.279Z",
+        "reason": "Claude: superseded decision-round sketch with its own exploratory fonts; not shipping code"
+      }
+    ]
+  }
+}

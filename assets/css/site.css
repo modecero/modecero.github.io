@@ -1,0 +1,632 @@
+@font-face {
+  font-family: "BBH Bogle";
+  src: url("../fonts/bbh-bogle-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow";
+  src: url("../fonts/barlow-400-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow";
+  src: url("../fonts/barlow-600-latin.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Barlow";
+  src: url("../fonts/barlow-700-latin.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --ground: #f2f2f0;
+  --ink: #16131f;
+  --ink-soft: #4d4a58;
+  --rule: #16131f;
+  --screen-hi: #4a4458;
+  --screen-mid: #221e30;
+  --screen-lo: #100e18;
+  --on-screen: #ffffff;
+  --on-screen-soft: #c4c0d0;
+  --magenta: #ff2bd6;
+  --cyan: #22d3ee;
+
+  --display: "BBH Bogle", "Barlow", sans-serif;
+  --text: "Barlow", system-ui, sans-serif;
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --max: 1440px;
+  --radius-control: 12px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  scrollbar-color: var(--ink) var(--ground);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 1.125rem;
+  line-height: 1.5;
+  caret-color: var(--magenta);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--ground);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+img,
+svg,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip {
+  position: absolute;
+  left: var(--gutter);
+  top: -100px;
+  background: var(--ink);
+  color: var(--ground);
+  padding: 10px 16px;
+  border-radius: var(--radius-control);
+  z-index: 10;
+}
+.skip:focus {
+  top: 12px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Header */
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: clamp(16px, 2.2vw, 28px);
+  padding-bottom: clamp(16px, 2.2vw, 28px);
+}
+
+.brand img {
+  height: clamp(52px, 5.6vw, 80px);
+  width: auto;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 14px 24px;
+  border-radius: var(--radius-control);
+  border: 2px solid var(--ink);
+  font-family: var(--text);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out),
+    text-shadow 0.18s var(--ease-out);
+}
+.btn svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+.btn-solid {
+  background: var(--ink);
+  color: var(--ground);
+}
+.btn-line {
+  background: transparent;
+  color: var(--ink);
+}
+.btn:hover {
+  text-shadow: -2px 0 var(--magenta), 2px 0 var(--cyan);
+}
+.btn-line:hover {
+  background: var(--ink);
+  color: var(--ground);
+}
+
+/* Statement */
+
+.statement {
+  padding-top: clamp(32px, 4.4vw, 64px);
+  padding-bottom: clamp(48px, 5.6vw, 80px);
+}
+.statement h1 {
+  margin: 0;
+  max-width: 16ch;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(3rem, 8.6vw, 8.5rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.statement p {
+  margin: clamp(20px, 2.4vw, 32px) 0 0;
+  max-width: 34rem;
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* Games */
+
+.games {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  grid-template-areas:
+    "head screen"
+    "body screen";
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(28px, 4vw, 72px);
+  align-items: start;
+  padding: clamp(20px, 2.4vw, 32px) 0 clamp(48px, 6vw, 88px);
+  border-top: 3px solid var(--rule);
+}
+
+.game-head {
+  grid-area: head;
+}
+.game-body {
+  grid-area: body;
+}
+.game .crt-frame {
+  grid-area: screen;
+  margin-top: clamp(8px, 1.2vw, 16px);
+  filter: drop-shadow(0 18px 22px rgba(22, 19, 31, 0.28));
+}
+
+.game-number {
+  margin-right: 0.04em;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.game h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.75rem, 6vw, 5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.pitch {
+  margin: clamp(18px, 2vw, 28px) 0 0;
+  max-width: 34rem;
+  font-size: 1.1875rem;
+  line-height: 1.5;
+}
+
+.facts {
+  margin: clamp(24px, 2.6vw, 36px) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  max-width: 34rem;
+  border-top: 2px solid var(--rule);
+}
+.facts dt,
+.facts dd {
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(22, 19, 31, 0.25);
+}
+.facts dt {
+  padding-right: 24px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.facts dd {
+  font-weight: 600;
+}
+
+.game-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: clamp(24px, 2.6vw, 36px);
+}
+
+/* The CRT screen: Mode Cero's logo screen as the frame for each game */
+
+.crt {
+  position: relative;
+  aspect-ratio: 1024 / 804;
+  border-radius: 9% / 11.5%;
+  overflow: hidden;
+  /* The silhouette is the logo's own TV screen, taken from its alpha */
+  -webkit-mask-image: url("../brand/modecero-logo.png");
+  mask-image: url("../brand/modecero-logo.png");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  background: radial-gradient(
+    ellipse 70% 62% at 28% 20%,
+    var(--screen-hi) 0,
+    var(--screen-mid) 52%,
+    var(--screen-lo) 100%
+  );
+  color: var(--on-screen);
+  isolation: isolate;
+}
+.crt::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.035) 0 1px,
+    transparent 1px 4px
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+
+.crt-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.crt-card {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8% 8% 10%;
+  text-align: center;
+  pointer-events: none;
+}
+.crt-card > * {
+  pointer-events: auto;
+}
+
+.crt-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 14px 26px 14px 20px;
+  border: 0;
+  border-radius: var(--radius-control);
+  background: var(--on-screen);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.35;
+  cursor: pointer;
+  transition: text-shadow 0.18s var(--ease-out), transform 0.2s var(--ease-out);
+}
+.crt-play svg {
+  width: 22px;
+  height: 22px;
+}
+.crt-play:hover {
+  text-shadow: -2px 0 var(--magenta), 2px 0 var(--cyan);
+}
+.crt-play:focus-visible {
+  outline-color: var(--on-screen);
+}
+
+/* Video, letterboxed inside the 4:3-ish screen like an old TV */
+.crt-video {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  top: 50%;
+  transform: translateY(-50%);
+  aspect-ratio: 16 / 9;
+  z-index: 1;
+}
+.crt-video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Signature moment: the TV powers on */
+.crt-flash {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 100%;
+  translate: 0 -50%;
+  background: var(--on-screen);
+  transform: scaleY(0.006) scaleX(0);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.crt.is-powering .crt-card {
+  opacity: 0;
+  transition: opacity 0.12s linear;
+}
+.crt.is-powering .crt-flash {
+  animation: power-on 0.62s var(--ease-out) forwards;
+}
+.crt.is-powering .crt-flash::before,
+.crt.is-powering .crt-flash::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 6%;
+  top: 47%;
+}
+.crt.is-powering .crt-flash::before {
+  background: var(--magenta);
+  translate: -3% 0;
+}
+.crt.is-powering .crt-flash::after {
+  background: var(--cyan);
+  translate: 3% 6%;
+}
+
+@keyframes power-on {
+  0% {
+    opacity: 1;
+    transform: scaleY(0.006) scaleX(0);
+  }
+  35% {
+    opacity: 1;
+    transform: scaleY(0.006) scaleX(1);
+  }
+  70% {
+    opacity: 1;
+    transform: scaleY(1) scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(1) scaleX(1);
+  }
+}
+
+/* Footer: a flat dark footer inside the main column whose top edge, the separator,
+   carries the TV screen's convex curve. site.js cuts that edge; the radius is the fallback. */
+
+.site-footer {
+  margin-top: clamp(72px, 9vw, 136px);
+  font-size: 1rem;
+}
+.footer-screen {
+  position: relative;
+  padding: clamp(36px, 4vw, 56px) clamp(28px, 5vw, 80px) clamp(20px, 2.4vw, 32px);
+  border-radius: 48px 48px 0 0;
+  background: radial-gradient(
+    ellipse 70% 90% at 22% 8%,
+    var(--screen-hi) 0,
+    var(--screen-mid) 50%,
+    var(--screen-lo) 100%
+  );
+  color: var(--on-screen);
+  isolation: isolate;
+}
+.footer-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.045) 0 1px,
+    transparent 1px 4px
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+.site-footer ::selection {
+  background: var(--on-screen);
+  color: var(--ink);
+}
+.site-footer :focus-visible {
+  outline-color: var(--on-screen);
+}
+.site-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+}
+.site-footer a {
+  font-weight: 600;
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(32px, 4vw, 56px);
+}
+.footer-logo {
+  width: clamp(112px, 12vw, 176px);
+  height: auto;
+}
+.footer-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.site-footer .footer-icons {
+  gap: clamp(4px, 1vw, 12px);
+  /* optical alignment: the icon glyph, not its 56px hit area, meets the column edge */
+  margin-right: -11px;
+}
+.footer-icons a {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-control);
+  color: var(--on-screen);
+  transition: filter 0.18s var(--ease-out), background-color 0.2s var(--ease-out);
+}
+.footer-icons .icon {
+  width: 34px;
+  height: 34px;
+}
+.footer-icons a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  filter: drop-shadow(-2px 0 var(--magenta)) drop-shadow(2px 0 var(--cyan));
+}
+
+.footer-base {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 32px;
+  margin-top: clamp(28px, 3vw, 40px);
+  padding-top: 16px;
+  border-top: 1px solid rgba(196, 192, 208, 0.35);
+  color: var(--on-screen-soft);
+}
+.footer-base p {
+  margin: 0;
+}
+.site-footer .pending {
+  color: var(--on-screen-soft);
+}
+.game-actions .pending {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+}
+.pending {
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* Legal placeholder pages */
+
+.doc {
+  padding-top: clamp(40px, 6vw, 88px);
+  max-width: 44rem;
+}
+.doc h1 {
+  margin: 0 0 24px;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.doc p {
+  max-width: 65ch;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .game {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "head"
+      "screen"
+      "body";
+    grid-template-rows: auto;
+  }
+  .game .crt-frame {
+    margin-top: 24px;
+  }
+  .footer-main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .site-footer .footer-icons {
+    margin-left: -11px;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header .btn {
+    padding: 10px 14px;
+    font-size: 1rem;
+  }
+  .site-header .btn svg {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+  .btn:hover,
+  .crt-play:hover {
+    text-shadow: none;
+  }
+  .footer-icons a:hover {
+    filter: none;
+  }
+}

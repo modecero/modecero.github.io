@@ -1,0 +1,8 @@
+# GitHub Pages (Jekyll) build settings.
+# The site itself is plain HTML/CSS/JS; these files are internal project docs
+# and tooling, kept in the repo but never published.
+exclude:
+  - PRODUCT.md
+  - DESIGN.md
+  - .impeccable
+  - .claude

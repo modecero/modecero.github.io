@@ -1,0 +1,400 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-26T00:00:00Z",
+  "title": "Design System: Mode Cero",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "Screen Ink",
+        "canonical": "#16131f",
+        "tonalRamp": [
+          "oklch(15% 0.02 295)",
+          "oklch(19% 0.025 295)",
+          "oklch(28% 0.03 295)",
+          "oklch(40% 0.03 295)",
+          "oklch(55% 0.025 295)",
+          "oklch(70% 0.02 295)",
+          "oklch(84% 0.012 295)",
+          "oklch(95% 0.005 295)"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "#f2f2f0",
+        "tonalRamp": [
+          "oklch(20% 0.003 106)",
+          "oklch(35% 0.003 106)",
+          "oklch(50% 0.003 106)",
+          "oklch(65% 0.003 106)",
+          "oklch(78% 0.003 106)",
+          "oklch(88% 0.003 106)",
+          "oklch(93% 0.003 106)",
+          "oklch(96% 0.003 106)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Faded Ink",
+        "canonical": "#4d4a58",
+        "tonalRamp": [
+          "oklch(18% 0.02 295)",
+          "oklch(28% 0.025 295)",
+          "oklch(36% 0.025 295)",
+          "oklch(42% 0.025 295)",
+          "oklch(55% 0.02 295)",
+          "oklch(68% 0.015 295)",
+          "oklch(82% 0.01 295)",
+          "oklch(94% 0.005 295)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "#16131f"
+      },
+      "screen-hi": {
+        "role": "neutral",
+        "displayName": "Screen Highlight",
+        "canonical": "#4a4458"
+      },
+      "screen-mid": {
+        "role": "neutral",
+        "displayName": "Screen Body",
+        "canonical": "#221e30",
+        "tonalRamp": [
+          "#100e18",
+          "#221e30",
+          "#4a4458"
+        ]
+      },
+      "screen-lo": {
+        "role": "neutral",
+        "displayName": "Screen Edge",
+        "canonical": "#100e18"
+      },
+      "on-screen": {
+        "role": "neutral",
+        "displayName": "Phosphor White",
+        "canonical": "#ffffff"
+      },
+      "on-screen-soft": {
+        "role": "neutral",
+        "displayName": "Dim Phosphor",
+        "canonical": "#c4c0d0"
+      },
+      "glitch-magenta": {
+        "role": "secondary",
+        "displayName": "Glitch Magenta",
+        "canonical": "#ff2bd6",
+        "tonalRamp": [
+          "oklch(25% 0.1 337)",
+          "oklch(35% 0.15 337)",
+          "oklch(46% 0.2 337)",
+          "oklch(56% 0.25 337)",
+          "oklch(66% 0.29 337)",
+          "oklch(76% 0.2 337)",
+          "oklch(86% 0.11 337)",
+          "oklch(95% 0.04 337)"
+        ]
+      },
+      "glitch-cyan": {
+        "role": "tertiary",
+        "displayName": "Glitch Cyan",
+        "canonical": "#22d3ee",
+        "tonalRamp": [
+          "oklch(25% 0.05 210)",
+          "oklch(36% 0.07 210)",
+          "oklch(48% 0.09 210)",
+          "oklch(60% 0.11 210)",
+          "oklch(70% 0.12 210)",
+          "oklch(80% 0.13 210)",
+          "oklch(88% 0.08 210)",
+          "oklch(96% 0.03 210)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The single uppercase studio statement. BBH Bogle at natural proportions, max 16ch, balanced wrap."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Uppercase game titles, preceded by a tabular two-digit index in Faded Ink."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The one supporting line under the statement, in Faded Ink, max 34rem."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text and the footer social list, max 34rem. Documents are capped at 65ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Button text in sentence case."
+      },
+      "data": {
+        "displayName": "Data",
+        "purpose": "Fact labels (Faded Ink) and values (Ink) in the facts definition list."
+      },
+      "headline-doc": {
+        "displayName": "Document Headline",
+        "purpose": "Uppercase legal page titles."
+      },
+      "pitch": {
+        "displayName": "Pitch",
+        "purpose": "The game pitch under each title, one step above body, max 34rem."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "The footer base row (copyright line and legal links), and the header button at 480px and below."
+      }
+    },
+    "shadows": [
+      {
+        "name": "set-shadow",
+        "value": "drop-shadow(0 18px 22px rgba(22, 19, 31, 0.28))",
+        "purpose": "Applied as a filter on a wrapper, only under the CRT frame, so it follows the masked TV silhouette. The footer casts no shadow."
+      },
+      {
+        "name": "rgb-split",
+        "value": "-2px 0 #ff2bd6, 2px 0 #22d3ee",
+        "purpose": "Text-shadow glitch on button hover. A state, not elevation."
+      },
+      {
+        "name": "rgb-split-filter",
+        "value": "drop-shadow(-2px 0 #ff2bd6) drop-shadow(2px 0 #22d3ee)",
+        "purpose": "The RGB split as a filter on footer contact icon hover, so it follows the glyph shape. Removed under reduced motion."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Default easing for every state transition and the power-on animation."
+      },
+      {
+        "name": "state",
+        "value": "0.18s-0.2s",
+        "purpose": "Button colour and text-shadow transitions, and footer icon filter and background."
+      },
+      {
+        "name": "power-on",
+        "value": "0.62s ease-out",
+        "purpose": "TV power-on flash: removes the key art, then a line opens to full width (35%), then to full height (70%), then fades. The video swaps in at 520ms. Skipped under prefers-reduced-motion."
+      },
+      {
+        "name": "logo-glitch",
+        "value": "one-shot animated WebP burst, ~590ms (data-logo-burst-ms=\"590\"), then back to the still after duration + 60ms",
+        "purpose": "Header logo only. Plays once on load and again on mouseenter or focus of the logo link, each time from a fresh blob URL so it restarts at frame 1. Reduced motion and no-JS show the still only."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stack",
+        "value": "900px"
+      },
+      {
+        "name": "compact",
+        "value": "480px"
+      }
+    ],
+    "materials": [
+      {
+        "name": "screen-crt",
+        "value": "radial-gradient(ellipse 70% 62% at 28% 20%, var(--screen-hi) 0, var(--screen-mid) 52%, var(--screen-lo) 100%) + repeating-linear-gradient(0deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 4px)",
+        "purpose": "Inside the masked CRT silhouette."
+      },
+      {
+        "name": "screen-footer",
+        "value": "radial-gradient(ellipse 70% 90% at 22% 8%, var(--screen-hi) 0, var(--screen-mid) 50%, var(--screen-lo) 100%) + repeating-linear-gradient(0deg, rgba(255,255,255,0.045) 0 1px, transparent 1px 4px)",
+        "purpose": "The flat footer inside the main column, flush to the page bottom."
+      }
+    ],
+    "shapes": [
+      {
+        "name": "tv-mask",
+        "value": "mask-image: url(assets/brand/modecero-logo.png); mask-size: 100% 100%; aspect-ratio: 1024 / 804",
+        "purpose": "Full TV silhouette for the game screens, taken from the official logo alpha."
+      },
+      {
+        "name": "tv-top-clip",
+        "value": "clip-path: path() computed by site.js (tvTopPath) from the element box on resize. Top convex bulge clamp(8px, 1.2% w, 18px); top corner radius clamp(24px, 4% w, 56px); straight sides; square bottom. Opt in with [data-tv-shape=\"top\"].",
+        "purpose": "The footer separator: the TV curve on the top edge only, never stretched."
+      },
+      {
+        "name": "footer-top-fallback",
+        "value": "border-radius: 48px 48px 0 0",
+        "purpose": "Fallback for tv-top-clip when JS or clip-path path() support is missing."
+      },
+      {
+        "name": "tv-clip",
+        "value": "clip-path: path() computed by site.js (tvPath) for [data-tv-shape] with no value. Top/bottom bulge clamp(8px, 3.5% h, 22px); side bulge clamp(5px, 1% w, 14px); corner radius clamp(24px, 12% min(w,h), 64px).",
+        "purpose": "Full TV silhouette for any proportion. Available in site.js, but no shipped element uses it."
+      }
+    ],
+    "icons": {
+      "library": "Phosphor Icons (@phosphor-icons/core 2.1.1, MIT)",
+      "delivery": "Inline SVG, class=\"icon\", viewBox 0 0 256 256, fill currentColor, aria-hidden=\"true\", focusable=\"false\". No external requests.",
+      "weights": {
+        "fill": "Footer contact icons (envelope-simple, x-logo, youtube-logo, tiktok-logo) and the screen play button.",
+        "bold": "Icons inside ink-bordered buttons: envelope-simple (header) and download-simple (press kit)."
+      },
+      "sizes": {
+        "button": "20px",
+        "screen-play": "22px",
+        "footer-contact": "34px in a 56px hit area"
+      }
+    },
+    "brandAssets": [
+      {
+        "name": "logo-static",
+        "path": "assets/brand/modecero-logo.png",
+        "use": "Official static logo (1024 x 804). Alpha source of the CRT mask, favicon and OG image. Unmodified. Not used as the header rest state, because it differs from the animation's first frame."
+      },
+      {
+        "name": "logo-animated-source",
+        "path": "assets/brand/modecero_logo_original_glitch.webp",
+        "use": "Official animated logo (960 x 753, alpha, 14 frames). Kept as the source asset only; the still and burst derive from it."
+      },
+      {
+        "name": "logo-still",
+        "path": "assets/brand/modecero_logo_still.webp",
+        "use": "Header rest state: frame 1 of the official animated logo, lossless and pixel-identical (960 x 753). Also the reduced-motion and no-JS header logo."
+      },
+      {
+        "name": "logo-burst",
+        "path": "assets/brand/modecero_logo_glitch_burst.webp",
+        "use": "Header glitch burst: the official animated logo with only timing metadata changed (frame 1 hold 40ms, loop once, ~590ms). Pixels untouched."
+      },
+      {
+        "name": "logo-inverted-flat",
+        "path": "assets/brand/modecero_logo_plana_inversa.svg",
+        "use": "Inverted flat logo (white TV screen, ink letters, RGB glitch). Static, on the dark footer. Unmodified."
+      }
+    ],
+    "gameAssets": {
+      "path": "assets/games/<slug>/",
+      "keyArt": {
+        "size": "1600x1256",
+        "ratio": "1.27:1 (matches the logo TV, 1024/804)",
+        "format": "WebP, under 250 KB, opaque, full-bleed",
+        "derivatives": "800w WebP for srcset; sizes=\"(max-width: 900px) 92vw, 48vw\"",
+        "safeArea": "Key content in the central 80% x 75%; nothing important within ~150px of the corners."
+      },
+      "example": "assets/games/whirlpop/whirlpop-boxart.webp (+ whirlpop-boxart-800.webp)"
+    }
+  },
+  "components": [
+    {
+      "name": "Solid Button",
+      "kind": "button",
+      "refersTo": "button-solid",
+      "description": "The page's single raised voice: Email the studio.",
+      "html": "<a class=\"ds-btn ds-btn-solid\" href=\"#\"><svg class=\"ds-icon\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\"><path d=\"M224,44H32A12,12,0,0,0,20,56V192a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V56A12,12,0,0,0,224,44ZM193.15,68,128,127.72,62.85,68ZM44,188V83.28l75.89,69.57a12,12,0,0,0,16.22,0L212,83.28V188Z\"/></svg>Email the studio</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 14px 24px; border-radius: var(--radius-control, 12px); border: 2px solid var(--ink, #16131f); font-family: var(--text, Barlow, system-ui, sans-serif); font-size: 1.0625rem; font-weight: 700; line-height: 1.35; text-decoration: none; cursor: pointer; transition: background-color 0.2s cubic-bezier(0.16,1,0.3,1), color 0.2s cubic-bezier(0.16,1,0.3,1), text-shadow 0.18s cubic-bezier(0.16,1,0.3,1); } .ds-btn svg { width: 20px; height: 20px; flex: none; } .ds-btn-solid { background: var(--ink, #16131f); color: var(--ground, #f2f2f0); } .ds-btn:hover { text-shadow: -2px 0 var(--magenta, #ff2bd6), 2px 0 var(--cyan, #22d3ee); } .ds-btn:focus-visible { outline: 3px solid var(--ink, #16131f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Secondary actions such as Download press kit. Fills with ink on hover.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\"><svg class=\"ds-icon\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\"><path d=\"M228,144v64a12,12,0,0,1-12,12H40a12,12,0,0,1-12-12V144a12,12,0,0,1,24,0v52H204V144a12,12,0,0,1,24,0Zm-108.49,8.49a12,12,0,0,0,17,0l40-40a12,12,0,0,0-17-17L140,115V32a12,12,0,0,0-24,0v83L96.49,95.51a12,12,0,0,0-17,17Z\"/></svg>Download press kit</a>",
+      "css": ".ds-btn-line { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 14px 24px; border-radius: var(--radius-control, 12px); border: 2px solid var(--ink, #16131f); background: transparent; color: var(--ink, #16131f); font-family: var(--text, Barlow, system-ui, sans-serif); font-size: 1.0625rem; font-weight: 700; line-height: 1.35; text-decoration: none; transition: background-color 0.2s cubic-bezier(0.16,1,0.3,1), color 0.2s cubic-bezier(0.16,1,0.3,1), text-shadow 0.18s cubic-bezier(0.16,1,0.3,1); } .ds-btn-line svg { width: 20px; height: 20px; flex: none; } .ds-btn-line:hover { background: var(--ink, #16131f); color: var(--ground, #f2f2f0); text-shadow: -2px 0 var(--magenta, #ff2bd6), 2px 0 var(--cyan, #22d3ee); } .ds-btn-line:focus-visible { outline: 3px solid var(--ink, #16131f); outline-offset: 3px; }"
+    },
+    {
+      "name": "CRT Screen",
+      "kind": "custom",
+      "refersTo": "screen-play",
+      "description": "Signature frame for every game: the logo's TV silhouette (masked from the logo PNG in production; approximated here with a radius), the game's key art full-bleed and still under scanlines (a gradient stands in for the art here), and a bottom-centre play button shown only when a video exists. The key art has no hover effect.",
+      "html": "<div class=\"ds-crt\"><div class=\"ds-crt-poster\"></div><div class=\"ds-crt-card\"><button class=\"ds-crt-play\" type=\"button\"><svg class=\"ds-icon\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\"><path d=\"M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z\"/></svg>Play gameplay</button></div></div>",
+      "css": ".ds-crt { position: relative; width: 420px; max-width: 100%; aspect-ratio: 1024 / 804; border-radius: 9% / 11.5%; overflow: hidden; background: var(--screen-lo, #100e18); color: var(--on-screen, #fff); isolation: isolate; filter: drop-shadow(0 18px 22px rgba(22,19,31,0.28)); } .ds-crt::after { content: \"\"; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 4px); pointer-events: none; z-index: 3; } .ds-crt-poster { position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, #ff2bd6 0 12%, #22d3ee 13% 24%, #ffd23f 25% 36%, #221e30 37% 100%); } .ds-crt:hover .ds-crt:hover .ds-crt-card { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 8% 8% 10%; pointer-events: none; } .ds-crt-card > * { pointer-events: auto; } .ds-crt-play { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 14px 26px 14px 20px; border: 0; border-radius: 12px; background: #fff; color: var(--ink, #16131f); font-family: var(--text, Barlow, sans-serif); font-size: 1.0625rem; font-weight: 700; line-height: 1.35; cursor: pointer; transition: text-shadow 0.18s cubic-bezier(0.16,1,0.3,1); } .ds-crt-play .ds-icon { width: 22px; height: 22px; } .ds-crt-play:hover { text-shadow: -2px 0 #ff2bd6, 2px 0 #22d3ee; } .ds-crt-play:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Facts List",
+      "kind": "custom",
+      "description": "Two-column definition list of game facts under a 2px ink rule.",
+      "html": "<dl class=\"ds-facts\"><dt>Genre</dt><dd>Puzzle: falling blocks meets match-3</dd><dt>Platform</dt><dd>HTML5, mobile and desktop browsers</dd><dt>Status</dt><dd>Finished, ready to publish</dd></dl>",
+      "css": ".ds-facts { margin: 0; padding: 0; display: grid; grid-template-columns: max-content 1fr; max-width: 34rem; border-top: 2px solid var(--ink, #16131f); font-family: var(--text, Barlow, sans-serif); font-size: 1.125rem; color: var(--ink, #16131f); } .ds-facts dt, .ds-facts dd { margin: 0; padding: 10px 0; border-bottom: 1px solid rgba(22,19,31,0.25); font-weight: 600; } .ds-facts dt { padding-right: 24px; color: var(--ink-soft, #4d4a58); }"
+    },
+    {
+      "name": "Game Row Header",
+      "kind": "custom",
+      "description": "A 3px ink rule opening a list row, with the tabular index and the uppercase BBH Bogle title.",
+      "html": "<div class=\"ds-row\"><h2 class=\"ds-row-title\"><span class=\"ds-row-num\">01</span> Whirlpop</h2></div>",
+      "css": ".ds-row { border-top: 3px solid var(--ink, #16131f); padding-top: 24px; } .ds-row-title { margin: 0; font-family: var(--display, 'BBH Bogle', Barlow, sans-serif); font-weight: 400; font-size: 4rem; line-height: 0.95; text-transform: uppercase; color: var(--ink, #16131f); } .ds-row-num { margin-right: 0.04em; color: var(--ink-soft, #4d4a58); font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Footer",
+      "kind": "custom",
+      "refersTo": "footer-screen",
+      "description": "The page's closing panel: flat screen material with scanlines inside the main column, flush to the page bottom. The top edge carries the TV's convex curve (a computed clip-path in production; the 48px 48px 0 0 fallback is shown here) and the bottom is square. It holds the small inverted flat logo (an image in production, approximated here), an icon-only contact row in Phosphor Fill icons (email, X, YouTube, TikTok), and a base row with legal links in Dim Phosphor.",
+      "html": "<div class=\"ds-footer\"><div class=\"ds-footer-main\"><div class=\"ds-footer-logo\" aria-hidden=\"true\"></div><ul class=\"ds-footer-icons\" aria-label=\"Contact Mode Cero\"><li><a href=\"#\" aria-label=\"Email hello@modecero.com\"><svg class=\"ds-icon\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\"><path d=\"M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-8,144H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z\"/></svg></a></li><li><a href=\"#\" aria-label=\"Mode Cero on X\"><svg class=\"ds-icon\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\"><path d=\"M215,219.85a8,8,0,0,1-7,4.15H160a8,8,0,0,1-6.75-3.71l-40.49-63.63L53.92,221.38a8,8,0,0,1-11.84-10.76l61.77-68L41.25,44.3A8,8,0,0,1,48,32H96a8,8,0,0,1,6.75,3.71l40.49,63.63,58.84-64.72a8,8,0,0,1,11.84,10.76l-61.77,67.95,62.6,98.38A8,8,0,0,1,215,219.85Z\"/></svg></a></li><li><a href=\"#\" aria-label=\"Mode Cero on YouTube\"><svg class=\"ds-icon\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\"><path d=\"M234.33,69.52a24,24,0,0,0-14.49-16.4C185.56,39.88,131,40,128,40s-57.56-.12-91.84,13.12a24,24,0,0,0-14.49,16.4C19.08,79.5,16,97.74,16,128s3.08,48.5,5.67,58.48a24,24,0,0,0,14.49,16.41C69,215.56,120.4,216,127.34,216h1.32c6.94,0,58.37-.44,91.18-13.11a24,24,0,0,0,14.49-16.41c2.59-10,5.67-28.22,5.67-58.48S236.92,79.5,234.33,69.52Zm-73.74,65-40,28A8,8,0,0,1,108,156V100a8,8,0,0,1,12.59-6.55l40,28a8,8,0,0,1,0,13.1Z\"/></svg></a></li><li><a href=\"#\" aria-label=\"Mode Cero on TikTok\"><svg class=\"ds-icon\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\"><path d=\"M232,80v40a8,8,0,0,1-8,8,103.25,103.25,0,0,1-48-11.71V156a76,76,0,0,1-152,0c0-36.9,26.91-69.52,62.6-75.88A8,8,0,0,1,96,88v42.69a8,8,0,0,1-4.57,7.23A20,20,0,1,0,120,156V24a8,8,0,0,1,8-8h40a8,8,0,0,1,8,8,48.05,48.05,0,0,0,48,48A8,8,0,0,1,232,80Z\"/></svg></a></li></ul></div><div class=\"ds-footer-base\"><p>© 2026 Mode Cero. Original games, made in Spain.</p><ul class=\"ds-footer-links\"><li><a href=\"#\">Legal notice</a></li><li><a href=\"#\">Privacy</a></li></ul></div></div>",
+      "css": ".ds-footer { position: relative; isolation: isolate; padding: 36px 28px 20px; border-radius: 48px 48px 0 0; background: radial-gradient(ellipse 70% 90% at 22% 8%, var(--screen-hi, #4a4458) 0, var(--screen-mid, #221e30) 50%, var(--screen-lo, #100e18) 100%); color: var(--on-screen, #fff); font-family: var(--text, Barlow, system-ui, sans-serif); font-size: 1rem; } .ds-footer::before { content: \"\"; position: absolute; inset: 0; border-radius: inherit; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.045) 0 1px, transparent 1px 4px); pointer-events: none; z-index: -1; } .ds-footer-main { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px; } .ds-footer-logo { width: 112px; aspect-ratio: 1000 / 785; border-radius: 18% / 22%; background: var(--on-screen, #fff); } .ds-footer-icons { list-style: none; margin: 0 -11px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; } .ds-footer-icons a { display: grid; place-items: center; width: 56px; height: 56px; border-radius: var(--radius-control, 12px); color: var(--on-screen, #fff); transition: filter 0.18s cubic-bezier(0.16,1,0.3,1), background-color 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-footer-icons .ds-icon { width: 34px; height: 34px; } .ds-footer-icons a:hover { background: rgba(255,255,255,0.08); filter: drop-shadow(-2px 0 var(--magenta, #ff2bd6)) drop-shadow(2px 0 var(--cyan, #22d3ee)); } .ds-footer-links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 28px; } .ds-footer-links a { color: inherit; font-weight: 600; text-underline-offset: 0.2em; text-decoration-thickness: 2px; } .ds-footer-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; margin-top: 28px; padding-top: 16px; border-top: 1px solid rgba(196,192,208,0.35); color: var(--on-screen-soft, #c4c0d0); } .ds-footer-base p { margin: 0; } .ds-footer a:focus-visible { outline: 3px solid var(--on-screen, #fff); outline-offset: 3px; border-radius: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Studio's Own Screen",
+    "overview": "Mode Cero's logo is a rounded CRT television with the name on it and an RGB glitch cutting through it. The site turns that screen into the studio's display case. Every game sits inside the logo's exact TV silhouette: a dark radial screen lit from the upper left, with faint scanlines. Everything around it is a quiet, cool, light page set in ink. The page stays calm so the screen does the talking, and the only raised voice is the solid ink button that says Email the studio. The page closes on the same screen material: a flat, dark footer with scanlines inside the main column. Its top edge, the separator, carries the TV screen's convex curve, and below that it is square. It carries a small inverted flat logo and a row of contact icons: email, X, YouTube and TikTok.\n\nThe page reads like an index. A huge uppercase statement in BBH Bogle is followed by a numbered list of games, separated by heavy 3px ink rules. Each row puts the title, pitch and facts on one side and the screen on the other. Density is low and the type is large. Ornament stays inside the screen and in the brief glitch that answers hover, focus and play.\n\nThe refused default is the dark neon games-studio trailer page: a black hero, a nav bar and a screenshot grid. Here the ground is light, there is no navigation, and neon colour appears only as a glitch.",
+    "keyCharacteristics": [
+      "Light cool ground with ink type. The only dark material is the CRT screen, used for the game screens and the footer.",
+      "The logo's TV silhouette is the frame for every game. It is cut from the logo PNG's own alpha.",
+      "Magenta and cyan exist only as RGB-split glitch slices, and only in motion or active states.",
+      "BBH Bogle in uppercase for display, Barlow for everything readable.",
+      "3px ink rules between list rows. Ink-filled or ink-outlined controls with 12px corners.",
+      "The page ends on the screen material: a flat footer with scanlines inside the main column. Its top edge has the TV's convex curve, and it holds the small inverted logo and an icon-only contact row."
+    ],
+    "rules": [
+      {
+        "name": "The Glitch-Only Rule",
+        "body": "Magenta and cyan never fill a surface, colour body text or appear at rest. They show up in four places only: as paired, opposed RGB offsets on button hover and footer icon hover, as the two slices in the power-on flash, and inside the logo artwork itself, including the header logo's glitch burst. The logo artwork, static or animated, carries its own glitch slices and is exempt; it is used as supplied. Game key art never glitches.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Dark Thing Rule",
+        "body": "The page is light. The only dark material is the CRT screen material, which owns exactly two places: the game screens and the footer that closes the page. Both stay inside the main column, never full-bleed. Never add any other dark sections, bands or heroes.",
+        "section": "colors"
+      },
+      {
+        "name": "The Unstretched Display Rule",
+        "body": "On the site, BBH Bogle is set at its natural proportions. The 4:3 stretch belongs to the logo artwork only and is never applied in CSS.",
+        "section": "typography"
+      },
+      {
+        "name": "The Uppercase-for-Display-Only Rule",
+        "body": "Only BBH Bogle display and headline text is uppercase. Barlow text, including buttons, stays in sentence case.",
+        "section": "typography"
+      },
+      {
+        "name": "The Only-the-Set-Floats Rule",
+        "body": "Nothing on the page casts a shadow except the CRT screen.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use the official logo PNG unmodified, and derive the CRT silhouette from its alpha mask. On the dark footer, use the inverted flat logo SVG unmodified. In the header, rest on the still frame and play the burst (both derived from the official animated WebP, pixels untouched) only on load and on hover or focus.",
+      "Do frame every game, its key art and its video in the CRT screen, one game per ruled row. Each key art follows the per-game spec (1600 x 1256 WebP under 250 KB, opaque, safe area in the central 80% x 75%) and lives in `assets/games/<slug>/`.",
+      "Do keep magenta (#ff2bd6) and cyan (#22d3ee) as paired, opposed offsets that appear only on hover, focus or the power-on moment.",
+      "Do set display text in uppercase BBH Bogle at natural proportions, and everything readable in Barlow.",
+      "Do separate list rows with 3px ink rules, and keep controls at a 12px radius with a 2px ink border.",
+      "Do close every page with the flat scanline footer, kept inside the main column and flush to the page bottom, with the TV's convex curve on its top edge only. Inside it, put contact in the icon row and separate the base row with a 1px Dim Phosphor rule at 35% alpha.",
+      "Do draw the footer's curved top edge with the computed clip-path, so the curve never stretches with the width.",
+      "Do draw every icon from Phosphor Icons, inlined as SVG in currentColor: Fill weight on dark screens and the play button, Bold in buttons. Give every icon-only link an aria-label and a 56px hit area.",
+      "Do provide a reduced-motion path that removes the power-on animation, the RGB-split hovers and the logo burst."
+    ],
+    "donts": [
+      "Don't animate the logo anywhere but the header, loop it at rest, or play it under reduced motion.",
+      "Don't glitch the game key art. It sits still in the screen, with no hover effect.",
+      "Don't set type over the key art on the screen. The art carries the game's logo.",
+      "Don't mix icon families, or draw one-off icons by hand.",
+      "Don't stretch BBH Bogle 4:3 in CSS. That proportion belongs to the logo artwork alone.",
+      "Don't use magenta or cyan as fills, text colours, borders or resting decoration.",
+      "Don't add dark page sections, bands or a dark hero, and don't run the screen material full-bleed. It belongs only to the game screens and the footer.",
+      "Don't add shadows to anything except the CRT screen.",
+      "Don't add more than one solid ink button to a view. The solid fill is the page's one raised voice."
+    ]
+  }
+}
