@@ -115,7 +115,7 @@ components:
 
 **Creative North Star: "The Studio's Own Screen"**
 
-Mode Cero's logo is a rounded CRT television with the name on it and an RGB glitch cutting through it. The site turns that screen into the studio's display case. Every game sits inside the logo's exact TV silhouette: a dark radial screen lit from the upper left, with faint scanlines. Everything around it is a quiet, cool, light page set in ink. The page stays calm so the screen does the talking, and the only raised voice is the solid ink button that says Email the studio. The page closes on the same screen material: a flat, dark footer with scanlines inside the main column. Its top edge, the separator, carries the TV screen's convex curve, and below that it is square. It carries a small inverted flat logo and a row of contact icons: email, X, YouTube and TikTok.
+Mode Cero's logo is a rounded CRT television with the name on it and an RGB glitch cutting through it. The site turns that screen into the studio's display case. Every game sits inside the logo's exact TV silhouette, where its key art shows clean and still. Everything around it is a quiet, cool, light page set in ink. The page stays calm so the screen does the talking, and the only raised voice is the solid ink button that says Email the studio. The page closes on the same screen material: a flat, dark footer with scanlines inside the main column. Its top edge, the separator, carries the TV screen's convex curve, and below that it is square. It carries a small inverted flat logo and a row of contact icons: email, X, YouTube and TikTok.
 
 The page reads like an index. A huge uppercase statement in BBH Bogle is followed by a numbered list of games, separated by heavy 3px ink rules. Each row puts the title, pitch and facts on one side and the screen on the other. Density is low and the type is large. Ornament stays inside the screen and in the brief glitch that answers hover, focus and play.
 
@@ -189,7 +189,7 @@ The footer stays inside the main column (max 1440px, page gutters). It is never 
 
 ## Elevation & Depth
 
-The page is flat. Rules and contrast create structure, not shadows. The one lifted object is the game's CRT screen. It sits on a soft ambient drop shadow, so it reads as a physical set on the paper. The footer is flat and casts no shadow. Depth inside the screen material comes from its radial gradient and scanline overlay: 1px white lines on a 4px period, at 3.5% in the CRT and 4.5% in the footer.
+The page is flat. Rules and contrast create structure, not shadows. The one lifted object is the game's CRT screen. It sits on a soft ambient drop shadow, so it reads as a physical set on the paper. The footer is flat and casts no shadow. Depth inside the footer comes from the screen material's radial gradient and a scanline overlay of 1px white lines on a 4px period at 4.5%. The footer is the only place with scanlines. The game screen shows its key art or video clean, with no overlay.
 
 ### Shadow Vocabulary
 - **Set Shadow** (`filter: drop-shadow(0 18px 22px rgba(22, 19, 31, 0.28))`): only under the CRT frame. It sits on a wrapper as a filter, so it follows the masked TV silhouette.
@@ -224,8 +224,8 @@ Ink and confident, with a glitch on contact.
 - It stays hidden until the game has a video, so the screen never shows a dead control.
 
 ### CRT Screen (signature)
-- The logo's TV silhouette, masked from the logo PNG, filled with the three-stop screen gradient and a 4px-period scanline overlay at 3.5% white.
-- **At rest** it shows the game's key art, full-bleed (object-fit cover) under the mask and scanlines, with a responsive 800w / 1600w source set (sizes 92vw at 900px and below, otherwise 48vw). The key art carries the game's own logo, so no type is set on the screen. When the game has a video, the play button appears at the bottom centre.
+- The logo's TV silhouette, masked from the logo PNG, with the three-stop screen gradient behind the content. It has no scanline overlay.
+- **At rest** it shows the game's key art, full-bleed (object-fit cover) under the mask, with nothing over it, with a responsive 800w / 1600w source set (sizes 92vw at 900px and below, otherwise 48vw). The key art carries the game's own logo, so no type is set on the screen. When the game has a video, the play button appears at the bottom centre.
 - **No hover effect:** the key art sits still. It never glitches, slips or changes on hover or focus.
 - **Power-on:** pressing play removes the key art, collapses the card and runs a 0.62s flash. A white horizontal line opens to full width, then to full height, with one magenta and one cyan slice, then fades. The video (16:9, inset 7%) then replaces it, letterboxed like an old TV. Under reduced motion the swap happens instantly.
 
@@ -233,6 +233,7 @@ Ink and confident, with a glitch on contact.
 - Every game supplies one key art image for its screen, stored with its other assets in `assets/games/<slug>/`.
 - **Format:** 1600 x 1256 (1.27:1, matching the logo TV's 1024 / 804), WebP under 250 KB, full-bleed and opaque. Also supply a derived 800w version for the source set.
 - **Safe area:** keep key content in the central 80% x 75%, and nothing important within about 150px of the corners, which the TV mask cuts away.
+- **Never overlaid:** no scanlines, no glitch and no type over the key art. The same applies to the video that replaces it.
 - Write alt text that describes the art, including the game logo it carries.
 
 ### Facts List
@@ -278,7 +279,7 @@ The page's closing panel: flat and dark, inside the main column and flush to the
 
 ### Don't:
 - **Don't** animate the logo anywhere but the header, loop it at rest, or play it under reduced motion.
-- **Don't** glitch the game key art. It sits still in the screen, with no hover effect.
+- **Don't** glitch the game key art or lay scanlines over it (or over the video). It sits clean and still in the screen.
 - **Don't** set type over the key art on the screen. The art carries the game's logo.
 - **Don't** mix icon families, or draw one-off icons by hand.
 - **Don't** stretch BBH Bogle 4:3 in CSS. That proportion belongs to the logo artwork alone.
