@@ -38,6 +38,58 @@
       .catch(function () {});
   });
 
+  // Gameplay preview: a muted loop over the key art. preload="none" keeps it off the
+  // wire until it is wanted: on hover with a mouse, or once the screen scrolls into
+  // view on touch devices, where there is no hover.
+  var canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  var saveData = navigator.connection && navigator.connection.saveData;
+  var startPreview = function (video) {
+    var playback = video.play();
+    if (playback && playback.catch) playback.catch(function () {});
+  };
+  document.querySelectorAll(".crt").forEach(function (screen) {
+    var video = screen.querySelector(".crt-preview");
+    if (!video) return;
+    if (reduceMotion || saveData || (!canHover && !window.IntersectionObserver)) {
+      video.remove();
+      return;
+    }
+
+    if (!canHover) {
+      // Fade in once frames are actually playing; when scrolled away, just pause.
+      video.addEventListener("playing", function () {
+        screen.classList.add("is-previewing");
+      });
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) startPreview(video);
+          else video.pause();
+        });
+      }, { threshold: 0.5 }).observe(screen);
+      return;
+    }
+
+    var hovering = false;
+    var hideTimer = null;
+    video.addEventListener("playing", function () {
+      if (hovering) screen.classList.add("is-previewing");
+    });
+    screen.addEventListener("mouseenter", function () {
+      hovering = true;
+      window.clearTimeout(hideTimer);
+      startPreview(video);
+    });
+    screen.addEventListener("mouseleave", function () {
+      hovering = false;
+      screen.classList.remove("is-previewing");
+      // Rewind once the fade-out is done so the next hover starts from the top.
+      hideTimer = window.setTimeout(function () {
+        video.pause();
+        video.currentTime = 0;
+      }, 260);
+    });
+  });
+
   // Gameplay video: nothing loads from YouTube until the visitor asks for it.
   document.querySelectorAll(".crt[data-youtube-id]").forEach(function (screen) {
     var id = screen.getAttribute("data-youtube-id").trim();
@@ -61,7 +113,7 @@
       var card = screen.querySelector(".crt-card");
       var swap = function () {
         if (card) card.remove();
-        screen.querySelectorAll(".crt-poster").forEach(function (el) { el.remove(); });
+        screen.querySelectorAll(".crt-poster, .crt-preview").forEach(function (el) { el.remove(); });
         screen.classList.remove("is-powering");
         screen.appendChild(frame);
         iframe.focus();
@@ -134,8 +186,9 @@
   }
 
   // Links to files that are not uploaded yet become a marked placeholder.
+  // Opened straight from disk (file://) the check always fails, so the link is kept.
   document.querySelectorAll("a[data-optional-file]").forEach(function (link) {
-    if (!window.fetch) return;
+    if (!window.fetch || location.protocol === "file:") return;
     var markPending = function () {
       var note = document.createElement("span");
       note.className = "pending";

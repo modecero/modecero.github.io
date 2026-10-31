@@ -147,10 +147,10 @@ A two-tone ink-on-paper page with one dark screen material (game screens and the
 - **Dim Phosphor** (on-screen-soft): the footer's base line, legal links and pending placeholders. The footer's base rule is Dim Phosphor at 35% alpha.
 
 ### Glitch
-- **Glitch Magenta** (glitch-magenta) and **Glitch Cyan** (glitch-cyan): the logo's RGB fringe. They appear as paired, opposed offsets (-2px/+2px text-shadow on controls, drop-shadow on footer icons), and as the two slices in the power-on flash. The caret also uses magenta.
+- **Glitch Magenta** (glitch-magenta) and **Glitch Cyan** (glitch-cyan): the logo's RGB fringe. They appear as paired, opposed offsets (-2px/+2px text-shadow on the slipping slices of a button's label glitch, drop-shadow on footer icons), and as the two slices in the power-on flash. The caret also uses magenta.
 
 ### Named Rules
-**The Glitch-Only Rule.** Magenta and cyan never fill a surface, colour body text or appear at rest. They show up in four places only: as paired, opposed RGB offsets on button hover and footer icon hover, as the two slices in the power-on flash, and inside the logo artwork itself, including the header logo's glitch burst. The logo artwork, static or animated, carries its own glitch slices and is exempt; it is used as supplied. Game key art never glitches.
+**The Glitch-Only Rule.** Magenta and cyan never fill a surface, colour body text or appear at rest. They show up in four places only: as paired, opposed RGB offsets on the button label glitch and footer icon hover, as the two slices in the power-on flash, and inside the logo artwork itself, including the header logo's glitch burst. The logo artwork, static or animated, carries its own glitch slices and is exempt; it is used as supplied. Game key art never glitches.
 
 **The One Dark Thing Rule.** The page is light. The only dark material is the CRT screen material, which owns exactly two places: the game screens and the footer that closes the page. Both stay inside the main column, never full-bleed. Never add any other dark sections, bands or heroes.
 
@@ -193,7 +193,7 @@ The page is flat. Rules and contrast create structure, not shadows. The one lift
 
 ### Shadow Vocabulary
 - **Set Shadow** (`filter: drop-shadow(0 18px 22px rgba(22, 19, 31, 0.28))`): only under the CRT frame. It sits on a wrapper as a filter, so it follows the masked TV silhouette.
-- **RGB Split** (`text-shadow: -2px 0 #ff2bd6, 2px 0 #22d3ee`): the hover response on all buttons. It is a glitch state, not elevation. The footer contact icons use the same split as `filter: drop-shadow(-2px 0 #ff2bd6) drop-shadow(2px 0 #22d3ee)`, so it follows the glyph shape.
+- **RGB Split** (`text-shadow: -2px 0 #ff2bd6, 2px 0 #22d3ee`): the fringe on the label glitch slices. It is a glitch state, not elevation. The footer contact icons use the same split as `filter: drop-shadow(-2px 0 #ff2bd6) drop-shadow(2px 0 #22d3ee)`, so it follows the glyph shape.
 
 ### Named Rules
 **The Only-the-Set-Floats Rule.** Nothing on the page casts a shadow except the CRT screen.
@@ -214,8 +214,8 @@ site.js also keeps a full-silhouette clip-path for `data-tv-shape` with no value
 Ink and confident, with a glitch on contact.
 - **Shape:** gently rounded rectangle (12px), with a 2px ink border on every variant and a minimum height of 48px.
 - **Solid:** ink fill with Cool Paper text, padding 14px 24px, an optional 20px icon at a 10px gap (see Icons). Reserved for the single primary action, Email the studio.
-- **Line:** transparent with ink text and border. On hover it fills with ink. Used for secondary actions such as Download press kit.
-- **Hover:** all buttons pick up the RGB Split text-shadow. Colour and shadow transitions run at 0.18 to 0.2s on the expo-out ease.
+- **Line:** transparent with ink text and border. On hover it fills with ink. Used for secondary actions: Request a demo (a mailto with the subject "Demo Request for <game>") and Download press kit.
+- **Hover and focus:** the label glitches once, after the logo's burst: two copies of the label (from `data-text` on a `.glitch` span) show thin horizontal slices that jump sideways 2 to 6px with the RGB Split fringe, in discrete steps over 0.52s, then settle clean. Each slice is backed by the button colour so it hides the line beneath. The line button's colour flip runs at 0.2s on the expo-out ease. Reduced motion drops the glitch.
 - **Focus:** 3px ink outline, offset 3px.
 
 ### Screen Play Button
@@ -250,7 +250,7 @@ Static at rest, with a glitch that plays once on load and again on hover or focu
 ### Icons
 One icon family, Phosphor Icons. Each is inlined as SVG (256 viewBox, currentColor, aria-hidden, not focusable), so nothing loads from outside.
 - **Fill** weight for the footer contact icons and the play button.
-- **Bold** weight for the icons inside ink-bordered buttons (the header envelope and the press-kit download).
+- **Bold** weight for the icons inside ink-bordered buttons (the header envelope, the request-demo game controller and the press-kit download).
 - Icons take their size from the component: 20px in buttons, 22px on the play button and 34px in the footer. The header button drops its icon at 480px and below.
 
 ### Navigation
