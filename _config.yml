@@ -4,5 +4,6 @@
 exclude:
   - PRODUCT.md
   - DESIGN.md
+  - specs
   - .impeccable
   - .claude

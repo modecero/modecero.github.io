@@ -12,3 +12,6 @@
 # OS clutter
 .DS_Store
 Thumbs.db
+
+# Internal specs: may hold personal data, never commit
+specs/

@@ -89,13 +89,6 @@ components:
   button-line-hover:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.ground}"
-  screen-play:
-    backgroundColor: "{colors.on-screen}"
-    textColor: "{colors.ink}"
-    typography: "{typography.label}"
-    rounded: "{rounded.control}"
-    padding: "14px 26px 14px 20px"
-    height: "52px"
   footer-screen:
     backgroundColor: "{colors.screen-mid}"
     textColor: "{colors.on-screen}"
@@ -117,7 +110,7 @@ components:
 
 Mode Cero's logo is a rounded CRT television with the name on it and an RGB glitch cutting through it. The site turns that screen into the studio's display case. Every game sits inside the logo's exact TV silhouette, where its key art shows clean and still. Everything around it is a quiet, cool, light page set in ink. The page stays calm so the screen does the talking, and the only raised voice is the solid ink button that says Email the studio. The page closes on the same screen material: a flat, dark footer with scanlines inside the main column. Its top edge, the separator, carries the TV screen's convex curve, and below that it is square. It carries a small inverted flat logo and a row of contact icons: email, X, YouTube and TikTok.
 
-The page reads like an index. A huge uppercase statement in BBH Bogle is followed by a numbered list of games, separated by heavy 3px ink rules. Each row puts the title, pitch and facts on one side and the screen on the other. Density is low and the type is large. Ornament stays inside the screen and in the brief glitch that answers hover, focus and play.
+The page reads like an index. A huge uppercase statement in BBH Bogle is followed by a numbered list of games, separated by heavy 3px ink rules. Each row puts the title, pitch and facts on one side and the screen on the other. Density is low and the type is large. Ornament stays inside the screen and in the brief glitch that answers hover and focus.
 
 The refused default is the dark neon games-studio trailer page: a black hero, a nav bar and a screenshot grid. Here the ground is light, there is no navigation, and neon colour appears only as a glitch.
 
@@ -143,14 +136,14 @@ A two-tone ink-on-paper page with one dark screen material (game screens and the
 
 ### Screen material
 - **Screen Highlight / Screen Body / Screen Edge** (screen-hi, screen-mid, screen-lo): the three stops of the screen's radial gradient. In the CRT shape the ellipse is 70% x 62% at 28% 20% (body stop at 52%). In the footer it is 70% x 90% at 22% 8% (body stop at 50%), so the light sits near the upper-left edge. Used only for the CRT screens and the footer.
-- **Phosphor White** (on-screen): type and the play button on the screen, and the footer contact icons. Selection on the footer inverts to Phosphor White with ink text, and focus outlines switch to Phosphor White.
+- **Phosphor White** (on-screen): the footer contact icons. Selection on the footer inverts to Phosphor White with ink text, and focus outlines switch to Phosphor White.
 - **Dim Phosphor** (on-screen-soft): the footer's base line, legal links and pending placeholders. The footer's base rule is Dim Phosphor at 35% alpha.
 
 ### Glitch
-- **Glitch Magenta** (glitch-magenta) and **Glitch Cyan** (glitch-cyan): the logo's RGB fringe. They appear as paired, opposed offsets (-2px/+2px text-shadow on the slipping slices of a button's label glitch, drop-shadow on footer icons), and as the two slices in the power-on flash. The caret also uses magenta.
+- **Glitch Magenta** (glitch-magenta) and **Glitch Cyan** (glitch-cyan): the logo's RGB fringe. They appear as paired, opposed offsets (-2px/+2px text-shadow on the slipping slices of a button's label glitch, drop-shadow on footer icons). The caret also uses magenta.
 
 ### Named Rules
-**The Glitch-Only Rule.** Magenta and cyan never fill a surface, colour body text or appear at rest. They show up in four places only: as paired, opposed RGB offsets on the button label glitch and footer icon hover, as the two slices in the power-on flash, and inside the logo artwork itself, including the header logo's glitch burst. The logo artwork, static or animated, carries its own glitch slices and is exempt; it is used as supplied. Game key art never glitches.
+**The Glitch-Only Rule.** Magenta and cyan never fill a surface, colour body text or appear at rest. They show up in three places only: as paired, opposed RGB offsets on the button label glitch and footer icon hover, and inside the logo artwork itself, including the header logo's glitch burst. The logo artwork, static or animated, carries its own glitch slices and is exempt; it is used as supplied. Game key art never glitches.
 
 **The One Dark Thing Rule.** The page is light. The only dark material is the CRT screen material, which owns exactly two places: the game screens and the footer that closes the page. Both stay inside the main column, never full-bleed. Never add any other dark sections, bands or heroes.
 
@@ -189,7 +182,7 @@ The footer stays inside the main column (max 1440px, page gutters). It is never 
 
 ## Elevation & Depth
 
-The page is flat. Rules and contrast create structure, not shadows. The one lifted object is the game's CRT screen. It sits on a soft ambient drop shadow, so it reads as a physical set on the paper. The footer is flat and casts no shadow. Depth inside the footer comes from the screen material's radial gradient and a scanline overlay of 1px white lines on a 4px period at 4.5%. The footer is the only place with scanlines. The game screen shows its key art or video clean, with no overlay.
+The page is flat. Rules and contrast create structure, not shadows. The one lifted object is the game's CRT screen. It sits on a soft ambient drop shadow, so it reads as a physical set on the paper. The footer is flat and casts no shadow. Depth inside the footer comes from the screen material's radial gradient and a scanline overlay of 1px white lines on a 4px period at 4.5%. The footer is the only place with scanlines. The game screen shows its key art or gameplay preview clean, with no overlay.
 
 ### Shadow Vocabulary
 - **Set Shadow** (`filter: drop-shadow(0 18px 22px rgba(22, 19, 31, 0.28))`): only under the CRT frame. It sits on a wrapper as a filter, so it follows the masked TV silhouette.
@@ -218,22 +211,17 @@ Ink and confident, with a glitch on contact.
 - **Hover and focus:** the label glitches once, after the logo's burst: two copies of the label (from `data-text` on a `.glitch` span) show thin horizontal slices that jump sideways 2 to 6px with the RGB Split fringe, in discrete steps over 0.52s, then settle clean. Each slice is backed by the button colour so it hides the line beneath. The line button's colour flip runs at 0.2s on the expo-out ease. Reduced motion drops the glitch.
 - **Focus:** 3px ink outline, offset 3px.
 
-### Screen Play Button
-- A Phosphor White button with 12px corners (minimum height 52px) on the CRT, with ink label and a 22px Fill-weight play icon. Hover adds the RGB Split, and focus switches the outline to Phosphor White.
-- It sits at the bottom centre of the screen (the card is bottom-aligned with 8% padding, 10% at the bottom). Only the button takes pointer events.
-- It stays hidden until the game has a video, so the screen never shows a dead control.
-
 ### CRT Screen (signature)
 - The logo's TV silhouette, masked from the logo PNG, with the three-stop screen gradient behind the content. It has no scanline overlay.
-- **At rest** it shows the game's key art, full-bleed (object-fit cover) under the mask, with nothing over it, with a responsive 800w / 1600w source set (sizes 92vw at 900px and below, otherwise 48vw). The key art carries the game's own logo, so no type is set on the screen. When the game has a video, the play button appears at the bottom centre.
-- **No hover effect:** the key art sits still. It never glitches, slips or changes on hover or focus.
-- **Power-on:** pressing play removes the key art, collapses the card and runs a 0.62s flash. A white horizontal line opens to full width, then to full height, with one magenta and one cyan slice, then fades. The video (16:9, inset 7%) then replaces it, letterboxed like an old TV. Under reduced motion the swap happens instantly.
+- **At rest** it shows the game's key art, full-bleed (object-fit cover) under the mask, with nothing over it, with a responsive 800w / 1600w source set (sizes 92vw at 900px and below, otherwise 48vw). The key art carries the game's own logo, so no type is set on the screen.
+- **Gameplay preview:** a muted, looping, self-hosted clip (`assets/games/<slug>/<slug>-gameplay.mp4`, `preload="none"`, hidden from assistive tech) sits over the key art and fades in over 0.25s once frames are playing: on hover with a mouse (paused and rewound on leave), or when half the screen is in view on touch devices (paused when scrolled away). Reduced motion, Save-Data and touch devices without IntersectionObserver drop it and keep the key art. The key art itself never glitches, slips or changes.
+- **No player:** the screen has no play button and embeds no YouTube or other third-party player, so nothing on the page loads from YouTube. The YouTube channel is only a social link in the footer.
 
 ### Game Key Art (per-game rule)
 - Every game supplies one key art image for its screen, stored with its other assets in `assets/games/<slug>/`.
 - **Format:** 1600 x 1256 (1.27:1, matching the logo TV's 1024 / 804), WebP under 250 KB, full-bleed and opaque. Also supply a derived 800w version for the source set.
 - **Safe area:** keep key content in the central 80% x 75%, and nothing important within about 150px of the corners, which the TV mask cuts away.
-- **Never overlaid:** no scanlines, no glitch and no type over the key art. The same applies to the video that replaces it.
+- **Never overlaid:** no scanlines, no glitch and no type over the key art. The same applies to the gameplay preview.
 - Write alt text that describes the art, including the game logo it carries.
 
 ### Facts List
@@ -249,9 +237,9 @@ Static at rest, with a glitch that plays once on load and again on hover or focu
 
 ### Icons
 One icon family, Phosphor Icons. Each is inlined as SVG (256 viewBox, currentColor, aria-hidden, not focusable), so nothing loads from outside.
-- **Fill** weight for the footer contact icons and the play button.
+- **Fill** weight for the footer contact icons.
 - **Bold** weight for the icons inside ink-bordered buttons (the header envelope, the request-demo game controller and the press-kit download).
-- Icons take their size from the component: 20px in buttons, 22px on the play button and 34px in the footer. The header button drops its icon at 480px and below.
+- Icons take their size from the component: 20px in buttons and 34px in the footer. The header button drops its icon at 480px and below.
 
 ### Navigation
 - None. The header holds only the logo (linking home) and the contact button.
@@ -268,18 +256,18 @@ The page's closing panel: flat and dark, inside the main column and flush to the
 
 ### Do:
 - **Do** use the official logo PNG unmodified, and derive the CRT silhouette from its alpha mask. On the dark footer, use the inverted flat logo SVG unmodified. In the header, rest on the still frame and play the burst (both derived from the official animated WebP, pixels untouched) only on load and on hover or focus.
-- **Do** frame every game, its key art and its video in the CRT screen, one game per ruled row. Each key art follows the per-game spec (1600 x 1256 WebP under 250 KB, opaque, safe area in the central 80% x 75%) and lives in `assets/games/<slug>/`.
-- **Do** keep magenta (#ff2bd6) and cyan (#22d3ee) as paired, opposed offsets that appear only on hover, focus or the power-on moment.
+- **Do** frame every game, its key art and its gameplay preview in the CRT screen, one game per ruled row. Each key art follows the per-game spec (1600 x 1256 WebP under 250 KB, opaque, safe area in the central 80% x 75%) and lives in `assets/games/<slug>/`.
+- **Do** keep magenta (#ff2bd6) and cyan (#22d3ee) as paired, opposed offsets that appear only on hover or focus.
 - **Do** set display text in uppercase BBH Bogle at natural proportions, and everything readable in Barlow.
 - **Do** separate list rows with 3px ink rules, and keep controls at a 12px radius with a 2px ink border.
 - **Do** close every page with the flat scanline footer, kept inside the main column and flush to the page bottom, with the TV's convex curve on its top edge only. Inside it, put contact in the icon row and separate the base row with a 1px Dim Phosphor rule at 35% alpha.
 - **Do** draw the footer's curved top edge with the computed clip-path, so the curve never stretches with the width.
-- **Do** draw every icon from Phosphor Icons, inlined as SVG in currentColor: Fill weight on dark screens and the play button, Bold in buttons. Give every icon-only link an aria-label and a 56px hit area.
-- **Do** provide a reduced-motion path that removes the power-on animation, the RGB-split hovers and the logo burst.
+- **Do** draw every icon from Phosphor Icons, inlined as SVG in currentColor: Fill weight on dark screens, Bold in buttons. Give every icon-only link an aria-label and a 56px hit area.
+- **Do** provide a reduced-motion path that removes the gameplay preview, the RGB-split hovers and the logo burst.
 
 ### Don't:
 - **Don't** animate the logo anywhere but the header, loop it at rest, or play it under reduced motion.
-- **Don't** glitch the game key art or lay scanlines over it (or over the video). It sits clean and still in the screen.
+- **Don't** glitch the game key art or lay scanlines over it (or over the gameplay preview). It sits clean and still in the screen.
 - **Don't** set type over the key art on the screen. The art carries the game's logo.
 - **Don't** mix icon families, or draw one-off icons by hand.
 - **Don't** stretch BBH Bogle 4:3 in CSS. That proportion belongs to the logo artwork alone.

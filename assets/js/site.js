@@ -1,4 +1,4 @@
-// Mode Cero homepage: click-to-load gameplay video and optional file links.
+// Mode Cero site: logo glitch, gameplay preview, TV shapes and optional file links.
 
 (function () {
   "use strict";
@@ -87,44 +87,6 @@
         video.pause();
         video.currentTime = 0;
       }, 260);
-    });
-  });
-
-  // Gameplay video: nothing loads from YouTube until the visitor asks for it.
-  document.querySelectorAll(".crt[data-youtube-id]").forEach(function (screen) {
-    var id = screen.getAttribute("data-youtube-id").trim();
-    var button = screen.querySelector(".crt-play");
-    if (!button || !id) return;
-
-    // The play button only appears once there is a video to play.
-    button.hidden = false;
-
-    button.addEventListener("click", function () {
-      var frame = document.createElement("div");
-      frame.className = "crt-video";
-      var iframe = document.createElement("iframe");
-      iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) + "?autoplay=1&rel=0&modestbranding=1";
-      iframe.title = screen.getAttribute("data-video-title") || "Gameplay video";
-      iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
-      iframe.allowFullscreen = true;
-      iframe.referrerPolicy = "strict-origin-when-cross-origin";
-      frame.appendChild(iframe);
-
-      var card = screen.querySelector(".crt-card");
-      var swap = function () {
-        if (card) card.remove();
-        screen.querySelectorAll(".crt-poster, .crt-preview").forEach(function (el) { el.remove(); });
-        screen.classList.remove("is-powering");
-        screen.appendChild(frame);
-        iframe.focus();
-      };
-
-      if (reduceMotion) {
-        swap();
-      } else {
-        screen.classList.add("is-powering");
-        window.setTimeout(swap, 520);
-      }
     });
   });
 

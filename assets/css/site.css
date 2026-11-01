@@ -197,15 +197,11 @@ a {
   pointer-events: none;
 }
 .btn:hover .glitch::before,
-.btn:focus-visible .glitch::before,
-.crt-play:hover .glitch::before,
-.crt-play:focus-visible .glitch::before {
+.btn:focus-visible .glitch::before {
   animation: glitch-slice-a 0.52s steps(1, end);
 }
 .btn:hover .glitch::after,
-.btn:focus-visible .glitch::after,
-.crt-play:hover .glitch::after,
-.crt-play:focus-visible .glitch::after {
+.btn:focus-visible .glitch::after {
   animation: glitch-slice-b 0.52s steps(1, end);
 }
 @keyframes glitch-slice-a {
@@ -383,124 +379,6 @@ a {
   opacity: 1;
 }
 
-.crt-card {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 8% 8% 10%;
-  text-align: center;
-  pointer-events: none;
-}
-.crt-card > * {
-  pointer-events: auto;
-}
-
-.crt-play {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 52px;
-  padding: 14px 26px 14px 20px;
-  border: 0;
-  border-radius: var(--radius-control);
-  background: var(--on-screen);
-  color: var(--ink);
-  font-family: var(--text);
-  font-size: 1.0625rem;
-  font-weight: 700;
-  line-height: 1.35;
-  cursor: pointer;
-  transition: transform 0.2s var(--ease-out);
-}
-.crt-play svg {
-  width: 22px;
-  height: 22px;
-}
-.crt-play .glitch {
-  --glitch-bg: var(--on-screen);
-}
-.crt-play:focus-visible {
-  outline-color: var(--on-screen);
-}
-
-/* Video, letterboxed inside the 4:3-ish screen like an old TV */
-.crt-video {
-  position: absolute;
-  left: 7%;
-  right: 7%;
-  top: 50%;
-  transform: translateY(-50%);
-  aspect-ratio: 16 / 9;
-  z-index: 1;
-}
-.crt-video iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* Signature moment: the TV powers on */
-.crt-flash {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  height: 100%;
-  translate: 0 -50%;
-  background: var(--on-screen);
-  transform: scaleY(0.006) scaleX(0);
-  opacity: 0;
-  z-index: 2;
-  pointer-events: none;
-}
-.crt.is-powering .crt-card {
-  opacity: 0;
-  transition: opacity 0.12s linear;
-}
-.crt.is-powering .crt-flash {
-  animation: power-on 0.62s var(--ease-out) forwards;
-}
-.crt.is-powering .crt-flash::before,
-.crt.is-powering .crt-flash::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 6%;
-  top: 47%;
-}
-.crt.is-powering .crt-flash::before {
-  background: var(--magenta);
-  translate: -3% 0;
-}
-.crt.is-powering .crt-flash::after {
-  background: var(--cyan);
-  translate: 3% 6%;
-}
-
-@keyframes power-on {
-  0% {
-    opacity: 1;
-    transform: scaleY(0.006) scaleX(0);
-  }
-  35% {
-    opacity: 1;
-    transform: scaleY(0.006) scaleX(1);
-  }
-  70% {
-    opacity: 1;
-    transform: scaleY(1) scaleX(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scaleY(1) scaleX(1);
-  }
-}
-
 /* Footer: a flat dark footer inside the main column whose top edge, the separator,
    carries the TV screen's convex curve. site.js cuts that edge; the radius is the fallback. */
 
@@ -617,7 +495,7 @@ a {
   font-style: italic;
 }
 
-/* Legal placeholder pages */
+/* Legal pages */
 
 .doc {
   padding-top: clamp(40px, 6vw, 88px);
@@ -631,8 +509,22 @@ a {
   line-height: 1;
   text-transform: uppercase;
 }
-.doc p {
+.doc h2 {
+  margin: 2em 0 0.5em;
+  font-size: 1.375rem;
+  line-height: 1.25;
+}
+.doc h3 {
+  margin: 1.5em 0 0.5em;
+  font-size: 1.125rem;
+  line-height: 1.3;
+}
+.doc p,
+.doc ul {
   max-width: 65ch;
+}
+.doc li + li {
+  margin-top: 0.25em;
 }
 
 /* Responsive */

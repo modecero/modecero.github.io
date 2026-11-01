@@ -28,7 +28,7 @@ Mode Cero is an independent studio from Spain that makes original casual games. 
 - One game is finished and ready to publish: **Whirlpop**.
   - **Pitch (the user's own words):** "Whirlpop is a 100% original HTML5 puzzler that brings together two of the most addictive genres ever made, falling blocks and match-3, by putting them on a spinning board. It runs instantly on any device, mobile or desktop, and is built for the endless 'one more go.'"
   - **Facts:** HTML5 game; puzzle; falling blocks + match-3 on a spinning board; runs instantly in the browser on mobile and desktop; original IP.
-  - **Playable build is invitation-only.** It must never be embedded or linked publicly on the site; the public site shows the game through its YouTube gameplay video only.
+  - **Playable build is invitation-only.** It must never be embedded or linked publicly on the site; the public site shows the game through its key art and a short, self-hosted gameplay preview only. There is no YouTube player or link on the game card; YouTube appears only as the channel link in the footer.
   - **Not provided yet:** art style, store or portal availability.
 - Other games are in development, but the studio does **not** want to mention them publicly for now. They must not appear on the site, even as teasers or "coming soon" slots.
 - There is no store presence yet (no Steam, itch.io, console or mobile pages). Contact and follow-up go through email and social links.
@@ -57,7 +57,7 @@ Mode Cero is an independent studio from Spain that makes original casual games. 
 ## Evidence on Hand
 
 - A written explanation of the finished game.
-- Gameplay videos hosted on YouTube (URLs not provided yet).
+- A short gameplay clip, self-hosted at `assets/games/whirlpop/whirlpop-gameplay.mp4` and shown as the preview on the game screen. The site embeds no YouTube player; the YouTube channel is linked from the footer only.
 - A press kit, to be added to the repo as a downloadable file (not added yet).
 - Screenshots of the game (not added yet).
 
