@@ -207,7 +207,8 @@ site.js also keeps a full-silhouette clip-path for `data-tv-shape` with no value
 Ink and confident, with a glitch on contact.
 - **Shape:** gently rounded rectangle (12px), with a 2px ink border on every variant and a minimum height of 48px.
 - **Solid:** ink fill with Cool Paper text, padding 14px 24px, an optional 20px icon at a 10px gap (see Icons). Reserved for the single primary action, Email the studio.
-- **Line:** transparent with ink text and border. On hover it fills with ink. Used for secondary actions: Request a demo (a mailto with the subject "Demo Request for <game>") and Download press kit.
+- **Line:** transparent with ink text and border. On hover it fills with ink. Used for secondary actions, such as Download press kit.
+- **Store badge:** where a game is on itch.io, its first action is the official colour "available on itch.io" badge (itchy carnation, #fa5c5c) from itch.io's press kit (itch.io/press-kit), self-hosted at `assets/badges/itchio-badge.webp` (never hotlinked). It is the one flat brand colour on the page, kept on purpose so the store link reads as itch.io at a glance. Use the press kit's `badge-color.png`, resized to 3x the button height and saved as lossless WebP, not the SVG: the SVG sets "available on" as live text, which falls back to whatever font the browser has. It links to the game's itch.io page in a new tab, with alt text "Play <game> on itch.io". It matches the buttons' height exactly (the same padding, label line and border sum), takes its width from its own ratio and is shown exactly as supplied: never stretched, recoloured, re-cornered or given the glitch or any hover effect.
 - **Hover and focus:** the label glitches once, after the logo's burst: two copies of the label (from `data-text` on a `.glitch` span) show thin horizontal slices that jump sideways 2 to 6px with the RGB Split fringe, in discrete steps over 0.52s, then settle clean. Each slice is backed by the button colour so it hides the line beneath. The line button's colour flip runs at 0.2s on the expo-out ease. Reduced motion drops the glitch.
 - **Focus:** 3px ink outline, offset 3px.
 
@@ -238,8 +239,7 @@ Static at rest, with a glitch that plays once on load and again on hover or focu
 ### Icons
 One icon family, Phosphor Icons. Each is inlined as SVG (256 viewBox, currentColor, aria-hidden, not focusable), so nothing loads from outside.
 - **Fill** weight for the footer contact icons.
-- **Bold** weight for the icons inside ink-bordered buttons (the header envelope, the request-demo game controller and the press-kit download).
-- Icons take their size from the component: 20px in buttons and 34px in the footer. The header button drops its icon at 480px and below.
+- **Bold** weight for the icons inside ink-bordered buttons (the header envelope and the press-kit download).- Icons take their size from the component: 20px in buttons and 34px in the footer. The header button drops its icon at 480px and below.
 
 ### Navigation
 - None. The header holds only the logo (linking home) and the contact button.

@@ -173,6 +173,19 @@ a {
   color: var(--ground);
 }
 
+/* Official store badges (itch.io press kit), shown exactly as supplied: same
+   height as a .btn (padding + one line of label + border), width from the
+   badge's ratio. The link's radius only shapes the focus ring to the badge's
+   own corners (10% of its height). */
+.badge-link {
+  display: inline-flex;
+  border-radius: 6px;
+}
+.badge-link img {
+  height: calc(28px + 1.0625rem * 1.35 + 4px);
+  width: auto;
+}
+
 /* Label glitch, after the logo's: thin slices of the text jump sideways with
    magenta/cyan fringes, once per hover or focus. The copies come from data-text;
    each slice is backed by the button colour so it hides the line beneath. */

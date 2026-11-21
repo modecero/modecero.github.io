@@ -17,7 +17,7 @@ related_targets: []
 - **Structure:**
   1. Header: logo and Email the studio.
   2. Statement and one supporting line.
-  3. Games list: 01 Whirlpop, open, with the key art and a self-hosted gameplay preview in the CRT frame, the pitch, the facts, Request a demo and the press kit.
+  3. Games list: 01 Whirlpop, open, with the key art and a self-hosted gameplay preview in the CRT frame, the pitch, the facts, the official itch.io badge and the press kit.
   4. Footer: socials, Legal notice, Privacy, © Mode Cero.
 - **Proof:** a muted, self-hosted gameplay loop over the key art (on hover with a mouse, in view on touch screens). There is no YouTube player or link on the game card; the YouTube channel is only a social link in the footer. The playable build is invitation-only and is never linked.
 - **Ranges:** designed for 1 to about 12 games. New games become rows; unannounced games never appear.
